@@ -52,6 +52,8 @@ jobs:
           image_tag: 1.1
         run: | 
           docker build -t $registry/$repository:$image_tag .
+          echo $registry
+          echo $repository
           docker push $registry/$repository:$image_tag
 
       # - name: update to kube config
