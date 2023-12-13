@@ -37,13 +37,13 @@ jobs:
         run: |
                 echo "ECR Registry URL: ${{ steps.login-ecr.outputs.registry }}"
 
-      # - name: Docker meta tag
-      #   id: meta
-      #   uses: docker/metadata-action@v4
-      #   with:
-      #       images: vaishnaviwohlig/first
-      #       tags: |
-      #         type=raw,value={{date 'YYYYMMDDhhmmss'}}
+      - name: Docker meta tag
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+            images: vaishnaviwohlig/first
+            tags: |
+              type=raw,value={{date 'YYYYMMDDhhmmss'}}
 
       - name: Build and push
         env: 
@@ -51,11 +51,11 @@ jobs:
           repository: eks-registry
           image_tag: 1.1
         run: | 
-          docker build -t 187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:1 .
+          docker build -t 187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ steps.meta.outputs.tags }} .
           echo $registry
           echo $repository
           # docker push $registry/$repository:$image_tag
-          docker push 187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:1
+          docker push 187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ steps.meta.outputs.tags }}
 
       - name: update to kube config
         run: aws eks update-kubeconfig --name one-cluster
