@@ -51,16 +51,15 @@ jobs:
           repository: eks-registry
           image_tag: 1.1
         run: | 
-          docker build -t 187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:5 .
+          docker build -t 187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:10 .
           echo $registry
           echo $repository
-          # docker push $registry/$repository:$image_tag
-          docker push 187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:5
+          docker push 187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:10
 
-      - name: update to kube config
-        run: aws eks update-kubeconfig --name one-cluster
+      # - name: update to kube config
+      #   run: aws eks update-kubeconfig --name one-cluster
 
-      - name: deploy to eks
-        run: |
-          kubectl apply -f manifests/deployment.yaml
-          kubectl apply -f manifests/service.yaml
+      # - name: deploy to eks
+      #   run: |
+      #     kubectl apply -f manifests/deployment.yaml
+      #     kubectl apply -f manifests/service.yaml
