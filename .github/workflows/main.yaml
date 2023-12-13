@@ -1,0 +1,66 @@
+name: Express app on aws-eks
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  push_and_deploy:
+    name: push to aws-eks
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: install kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: v1.15.0
+        id: install
+
+      - name: aws configure
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET }}
+          aws-region: ap-south-1
+
+      - name: Login to ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+        # with:
+        #   mask-password: 'false'
+          
+
+      - name: print
+        run: |
+                echo "ECR Registry URL: ${{ steps.login-ecr.outputs.registry }}"
+
+      # - name: Docker meta tag
+      #   id: meta
+      #   uses: docker/metadata-action@v4
+      #   with:
+      #       images: vaishnaviwohlig/first
+      #       tags: |
+      #         type=raw,value={{date 'YYYYMMDDhhmmss'}}
+
+      - name: Build and push
+        env: 
+          registry: ${{ steps.login-ecr.outputs.registry }}
+          repository: eks-registry
+          image_tag: 1.1
+        run: | 
+          docker build -t 187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:1 .
+          echo $registry
+          echo $repository
+          # docker push $registry/$repository:$image_tag
+          docker push 187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:1
+
+      - name: update to kube config
+        run: aws eks update-kubeconfig --name one-cluster
+
+      - name: deploy to eks
+        run: |
+          kubectl apply -f manifests/deployment.yaml
+          kubectl apply -f manifests/service.yaml
