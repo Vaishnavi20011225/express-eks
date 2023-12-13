@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aws-eks
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aws-eks-app
+  template:
+    metadata:
+      labels:
+        app: aws-eks
+    spec:
+      containers:
+        - name: aws-eks-container
+          image: vaishnaviwohlig/aws-eks:latest
+
