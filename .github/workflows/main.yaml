@@ -41,7 +41,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-            images: vaishnaviwohlig/first
+            images: 187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry
             tags: |
               type=raw,value={{date 'YYYYMMDDhhmmss'}}
 
