@@ -55,6 +55,13 @@ jobs:
           echo $registry
           echo $repository
           docker push 187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}
+    
+      - name: update image
+        run:  yq e ".spec.template.spec.containers[0].image = '${{ github.sha }}'" -i manifests/deployments.yaml
+
+          
+     # - name: update image
+     #   run: yq e ".spec.template.spec.containers[0].image = '${{ github.sha }}'" -i manifests/deployments.yaml
 
       # - name: update to kube config
       #   run: aws eks update-kubeconfig --name one-cluster
