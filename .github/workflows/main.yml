@@ -32,6 +32,10 @@ jobs:
         with:
           mask-password: 'false'
 
+      - name: print
+        run: |
+                echo "ECR Registry URL: ${{ steps.login-ecr.outputs.registry }}"
+
       # - name: Docker meta tag
       #   id: meta
       #   uses: docker/metadata-action@v4
