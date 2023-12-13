@@ -59,9 +59,14 @@ jobs:
      
     
       - name: update image
-        run:  yq e ".spec.template.spec.containers[0].image = '187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}'" -i manifests/deployment.yaml
+        run: |
+                git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
+                git config --global user.username "Vaishnavi20011225"
+                yq e ".spec.template.spec.containers[0].image = '187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}'" -i manifests/deployment.yaml
 
-          
+                git add .
+                git commit -m "update new image"
+                git push --set-upstream origin main
      
       # - name: update to kube config
       #   run: aws eks update-kubeconfig --name one-cluster
