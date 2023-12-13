@@ -59,7 +59,7 @@ jobs:
      
     
       - name: update image
-        run:  yq e ".spec.template.spec.containers[0].image = '${{ github.sha }}'" -i manifests/deployment.yaml
+        run:  yq e ".spec.template.spec.containers[0].image = '187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}'" -i manifests/deployment.yaml
 
           
      
