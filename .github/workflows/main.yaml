@@ -58,7 +58,7 @@ jobs:
           docker push 187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:1
 
       - name: update to kube config
-        run: aws eks update-kubeconfig --name demos
+        run: aws eks update-kubeconfig --name one-cluster
 
       # - name: deploy to eks
       #   run: |
