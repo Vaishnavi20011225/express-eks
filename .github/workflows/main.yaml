@@ -51,10 +51,11 @@ jobs:
           repository: eks-registry
           image_tag: 1.1
         run: | 
-          docker build -t $registry/$repository:$image_tag .
+          docker build -t 187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:1 .
           echo $registry
           echo $repository
-          docker push $registry/$repository:$image_tag
+          # docker push $registry/$repository:$image_tag
+          docker push 187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:1
 
       # - name: update to kube config
       #   run: aws eks update-kubeconfig --name demos
