@@ -56,6 +56,7 @@ jobs:
 
                 git clone https://github.com/Vaishnavi20011225/express-eks.git
                 cd express-eks
+                git remote set-url origin https://username:token@github.com/Vaishnavi20011225/express-eks.git
                 git checkout main
                 
                 yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}"' manifests/deployment.yaml -i
