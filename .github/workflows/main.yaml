@@ -53,7 +53,7 @@ jobs:
         run: |
                  git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
                  git config --global user.name "Vaishnavi20011225"
-                
+                 git config --global user.password ${{ secrets.PSW_GITHUB }} 
 
                  git clone https://github.com/Vaishnavi20011225/express-eks.git
                  cd express-eks
@@ -73,9 +73,12 @@ jobs:
                  git remote get-url origin
                  git branch --show-current
                  
-                 git config --global user.password ${{ secrets.PSW_GITHUB }} 
+
+                 
+                 
                  echo "Git User Email: $(git config user.email)"
                  echo "Git User Name:  $(git config user.name)"
+                 git config --global credential.helper cache
                  git push origin main
                 
                  git status
