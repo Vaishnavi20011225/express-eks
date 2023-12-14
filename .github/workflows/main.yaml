@@ -60,8 +60,9 @@ jobs:
     
       - name: update image
         run: |
-                git --global config user.email "vaishnavi.korgaonkar@wohlig.com"
-                git --global config user.name "Vaishnavi20011225"
+                git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
+                git config --global user.name "Vaishnavi"
+
                 # yq e ".spec.template.spec.containers[0].image = '187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}'" -i manifests/deployment.yaml
                 # yq eval ".spec.template.spec.containers[0].image = \"187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}\"" -i manifests/deployment.yaml
                 yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}"' manifests/deployment.yaml -i
