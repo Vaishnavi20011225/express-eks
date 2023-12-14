@@ -51,15 +51,20 @@ jobs:
     
       - name: update image
         run: |
-                
+                git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
+                git config --global user.name "Vaishnavi"
+
+                git clone https://github.com/Vaishnavi20011225/express-eks.git
+                cd express-eks
+                git checkout main
                 
                 yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}"' manifests/deployment.yaml -i
                 
-                git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
-                git config --global user.name "Vaishnavi"
-                git add .
-                git commit -m "update new image"
-                git remote set-url origin https://github.com/Vaishnavi20011225/express-eks.git
-                git push 
+                
+                git status
+                # git add .
+                # git commit -m "update new image"
+                # git remote set-url origin https://github.com/Vaishnavi20011225/express-eks.git
+                # git push 
               
      
