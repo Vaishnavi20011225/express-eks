@@ -80,10 +80,9 @@ jobs:
                  # git remote get-url origin
                  # git branch --show-current
 
-                 echo "Git User Email: $(git config user.email)"
-                 echo "Git User Name:  $(git config user.name)"
                  git status
-                 git push 
+                 git config --global user.name "Vaishnavi20011225"
+                 git push origin main
                  echo "Git User Email: $(git config user.email)"
                  echo "Git User Name:  $(git config user.name)"
                 
