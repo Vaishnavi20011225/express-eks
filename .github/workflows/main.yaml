@@ -77,7 +77,11 @@ jobs:
                  echo "Git User Email: $(git config user.email)"
                  echo "Git User Name:  $(git config user.name)"
                  echo "Git Password: $(git config user.password)"
-                 echo "Git Token: $(git config user.token)"
+                 
+
+                 git remote get-url origin
+                 git branch --show-current
+
                  
                  git push 
                  echo "Git User Email: $(git config user.email)"
@@ -85,24 +89,4 @@ jobs:
                 
                  git status
 
-                # git clone https://github.com/Vaishnavi20011225/express-eks.git
-                # cd express-eks
-                # git checkout main
-                # git config user.name "Vaishnavi20011225"
-                # git config user.email "vaishnavi.korgaonkar@wohlig.com"
-                # yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}"' manifests/deployment.yaml -i
-                # git status
-                # echo "Git User Email: $(git config user.email)"
-                # echo "Git User Name:  $(git config user.name)"
-                # git add .
-                # git status
-                # echo "Git User Email: $(git config user.email)"
-                # echo "Git User Name:  $(git config user.name)"
-                # git commit -m "update new image"
-                # git status
-                # echo "Git User Email: $(git config user.email)"
-                # echo "Git User Name:  $(git config user.name)"
-                # git push origin main
-                  
-              
-     
+                
