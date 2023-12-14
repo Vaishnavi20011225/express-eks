@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: eks-registry
-          image: 187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:30
+          image: 187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:b4cc16ce35ed2b47a8dc1f65234d0a0f32a6e111
           imagepPullPolicy: always
           ports:
             - containerport: 8080
