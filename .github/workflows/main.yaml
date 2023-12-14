@@ -79,7 +79,7 @@ jobs:
                  echo "Git User Email: $(git config user.email)"
                  echo "Git User Name:  $(git config user.name)"
                  git config --global credential.helper cache
-                 git push origin main
+                 git push -u origin main
                 
                  git status
 
