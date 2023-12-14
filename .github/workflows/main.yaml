@@ -54,7 +54,7 @@ jobs:
                 
 
                 # yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}"' manifests/deployment.yaml -i
-                yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:25"' manifests/deployment.yaml -i
+                yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:30"' manifests/deployment.yaml -i
                 cat manifests/deployment.yaml
            
                 git add .
