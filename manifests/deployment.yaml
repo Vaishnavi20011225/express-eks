@@ -6,7 +6,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: aws-eks-app
+      app: aws-eks
   template:
     metadata:
       labels:
