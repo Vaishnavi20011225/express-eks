@@ -63,13 +63,11 @@ jobs:
                 git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
                 git config --global user.name "Vaishnavi"
 
-                # yq e ".spec.template.spec.containers[0].image = '187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}'" -i manifests/deployment.yaml
-                # yq eval ".spec.template.spec.containers[0].image = \"187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}\"" -i manifests/deployment.yaml
                 yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}"' manifests/deployment.yaml -i
                 git add .
                 git commit -m "update new image"
-                git remote add gitactions https://Vaishnavi20011225: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@github.com/Vaishnavi20011225/express-eks.git
-                git push https:///Vaishnavi20011225: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@github.com/Vaishnavi20011225/express-eks.git
+                git remote add gitactions https://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@github.com/Vaishnavi20011225/express-eks.git
+                git push https:///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@github.com/Vaishnavi20011225/express-eks.git
      
       # - name: update to kube config
       #   run: aws eks update-kubeconfig --name one-cluster
