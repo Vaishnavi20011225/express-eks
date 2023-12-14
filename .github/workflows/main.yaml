@@ -53,6 +53,9 @@ jobs:
         run: |
                  git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
                  git config --global user.name "Vaishnavi20011225"
+                 git config --global user.password "wohlig@123"
+
+                 git config --global credential.helper 'cache --timeout=3600'
 
                  git clone https://github.com/Vaishnavi20011225/express-eks.git
                  cd express-eks
