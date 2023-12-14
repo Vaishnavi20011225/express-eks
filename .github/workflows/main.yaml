@@ -71,6 +71,11 @@ jobs:
               
                 
                  git status
+                 echo "Git User Email: $(git config user.email)"
+                 echo "Git User Name:  $(git config user.name)"
+                 echo "Git Password: $(git config user.password)"
+                 echo "Git Token: $(git config user.token)"
+                 
                  git push 
                  echo "Git User Email: $(git config user.email)"
                  echo "Git User Name:  $(git config user.name)"
