@@ -51,34 +51,45 @@ jobs:
     
       - name: update image
         run: |
-                git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
-                git config --global user.name "Vaishnavi"
+                # git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
+                # git config --global user.name "Vaishnavi"
+
+                # git clone https://github.com/Vaishnavi20011225/express-eks.git
+                # cd express-eks
+                
+                # git remote set-url origin https://Vaishnavi20011225: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@github.com/Vaishnavi20011225/express-eks.git
+                
+                # git checkout main
+                
+                # yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}"' manifests/deployment.yaml -i
+                
+                
+                # git status
+                # git add .
+                # git commit -m "update new image"
+               
+                # echo "Git User Email: $(git config user.email)"
+                # echo "Git User Name:  $(git config user.name)"
+                
+                # git status
+                # echo "Git User Email: $(git config user.email)"
+                # echo "Git User Name:  $(git config user.name)"
+                # git push 
+                # echo "Git User Email: $(git config user.email)"
+                # echo "Git User Name:  $(git config user.name)"
+                
+                # git status
 
                 git clone https://github.com/Vaishnavi20011225/express-eks.git
                 cd express-eks
-                
-                git remote set-url origin https://Vaishnavi20011225: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@github.com/Vaishnavi20011225/express-eks.git
-                
                 git checkout main
-                
+                git config user.name "Vaishnavi20011225"
+                git config user.email "vaishnavi.korgaonkar@wohlig.com"
                 yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}"' manifests/deployment.yaml -i
                 
-                
-                git status
                 git add .
                 git commit -m "update new image"
-               
-                echo "Git User Email: $(git config user.email)"
-                echo "Git User Name:  $(git config user.name)"
-                
-                git status
-                echo "Git User Email: $(git config user.email)"
-                echo "Git User Name:  $(git config user.name)"
-                git push 
-                echo "Git User Email: $(git config user.email)"
-                echo "Git User Name:  $(git config user.name)"
-                
-                git status
-                
+                git push origin main
+                  
               
      
