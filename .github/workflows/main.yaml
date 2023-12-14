@@ -66,6 +66,8 @@ jobs:
                 git commit -m "update new image"
                 git status
                 # git remote set-url origin https://github.com/Vaishnavi20011225/express-eks.git
+                git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
+                git config --global user.name "Vaishnavi"
                 git push origin main
                 git status
                 
