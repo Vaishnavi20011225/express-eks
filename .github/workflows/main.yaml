@@ -82,6 +82,7 @@ jobs:
 
                  git status
                  git config --global user.name "Vaishnavi20011225"
+                 git remote set-url origin https://Vaishnavi20011225@github.com/Vaishnavi20011225/express-eks.git
                  git push origin main
                  echo "Git User Email: $(git config user.email)"
                  echo "Git User Name:  $(git config user.name)"
