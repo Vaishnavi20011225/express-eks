@@ -80,10 +80,12 @@ jobs:
                  git branch --show-current
 
 
-                 git remote set-url origin https://Vaishnavi20011225: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@github.com/Vaishnavi20011225/express-eks.git
+                 # git remote set-url origin https://Vaishnavi20011225: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@github.com/Vaishnavi20011225/express-eks.git
 
 
-                 
+                 echo "Git User Email: $(git config user.email)"
+                 echo "Git User Name:  $(git config user.name)"
+                 git status
                  git push 
                  echo "Git User Email: $(git config user.email)"
                  echo "Git User Name:  $(git config user.name)"
