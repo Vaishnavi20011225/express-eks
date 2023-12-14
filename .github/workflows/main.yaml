@@ -53,14 +53,12 @@ jobs:
         run: |
                  git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
                  git config --global user.name "Vaishnavi20011225"
-                 git config --global user.password "wohlig@123"
-
-                 git config --global credential.helper 'cache --timeout=3600'
+                
 
                  git clone https://github.com/Vaishnavi20011225/express-eks.git
                  cd express-eks
                  git checkout main
-                 git remote set-url origin https://Vaishnavi20011225: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@github.com/Vaishnavi20011225/express-eks.git
+                 # git remote set-url origin https://Vaishnavi20011225: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@github.com/Vaishnavi20011225/express-eks.git
                 
                  # git checkout main
                  git status
@@ -76,11 +74,14 @@ jobs:
                  git status
                  echo "Git User Email: $(git config user.email)"
                  echo "Git User Name:  $(git config user.name)"
-                 echo "Git Password: $(git config user.password)"
-                 
+                
 
                  git remote get-url origin
                  git branch --show-current
+
+
+                 git remote set-url origin https://Vaishnavi20011225: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@github.com/Vaishnavi20011225/express-eks.git
+
 
                  
                  git push 
