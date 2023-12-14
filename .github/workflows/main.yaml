@@ -52,7 +52,7 @@ jobs:
       - name: update image
         run: |
                  git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
-                 git config --global user.name "Vaishnavi"
+                 git config --global user.name "Vaishnavi20011225"
 
                  git clone https://github.com/Vaishnavi20011225/express-eks.git
                  cd express-eks
