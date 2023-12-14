@@ -66,6 +66,6 @@ jobs:
                 git commit -m "update new image"
                 git status
                 # git remote set-url origin https://github.com/Vaishnavi20011225/express-eks.git
-                git push 
+                git push -u origin main
               
      
