@@ -68,6 +68,8 @@ jobs:
                 # git remote set-url origin https://github.com/Vaishnavi20011225/express-eks.git
                 git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
                 git config --global user.name "Vaishnavi"
+                git remote get-url origin
+                git branch --show-current
                 git push origin main
                 git status
                 
