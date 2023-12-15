@@ -51,7 +51,7 @@ jobs:
     
       - name: update image
         run: |
-                 git clone https://github.com/Vaishnavi20011225/awseks-gitops.git
+                 git clone https://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@github.com/Vaishnavi20011225/awseks-gitops.git
                  
                  cd awseks-gitops
                  git checkout manifests
