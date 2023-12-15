@@ -83,7 +83,7 @@ jobs:
                   git checkout manifests
                   git config user.name "Vaishnavi20011225"
                   git config user.email "vaishnavi.korgaonkar@wohlig.com"
-                  git config user.password "${{ secrets.PSW_GITHUB }}
+                  git config user.password "${{ secrets.PSW_GITHUB }}"
                   yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}"' manifests/deployment.yaml -i
                 
                   git add .
