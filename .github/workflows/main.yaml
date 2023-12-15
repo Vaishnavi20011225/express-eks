@@ -53,7 +53,6 @@ jobs:
         run: |
                  git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
                  git config --global user.name "Vaishnavi20011225"
-                 git config --global user.password ${{ secrets.PSW_GITHUB }} 
 
                  git clone git@github.com:Vaishnavi20011225/awseks-gitops.git
                  cd awseks-gitops
@@ -70,7 +69,6 @@ jobs:
                 
                 
                  git remote set-url origin git@github.com:Vaishnavi20011225/awseks-gitops.git
-                 # https://Vaishnavi20011225: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@github.com/Vaishnavi20011225/awseks-gitops.git
                  git remote get-url origin
                  git branch --show-current
                  
