@@ -51,16 +51,15 @@ jobs:
     
       - name: update image
         run: |
-                 git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
-                 git config --global user.name "Vaishnavi20011225"
-
                  git clone https://github.com/Vaishnavi20011225/awseks-gitops.git
                  
                  cd awseks-gitops
                  git checkout manifests
                 
                  git status
-                
+                 git config user.email "vaishnavi.korgaonkar@wohlig.com"
+                 git config user.name "Vaishnavi20011225"
+
                  yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}"' manifests/deployment.yaml -i
                 
                  git add .
