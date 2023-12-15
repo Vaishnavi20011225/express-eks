@@ -69,7 +69,7 @@ jobs:
                  git status
                 
                 
-                 git remote set-url origin https://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@github.com/Vaishnavi20011225/awseks-gitops.git
+                 git remote set-url origin https://Vaishnavi20011225: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@github.com/Vaishnavi20011225/awseks-gitops.git
                  git remote get-url origin
                  # git branch --show-current
                  
