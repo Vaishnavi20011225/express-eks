@@ -85,9 +85,10 @@ jobs:
                   git config user.email "vaishnavi.korgaonkar@wohlig.com"
                   git config user.password "${{ secrets.PSW_GITHUB }}"
                   yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}"' manifests/deployment.yaml -i
-                
+                  
                   git add .
                   git commit -m "updating newer image" --allow-empty
+                  echo "Git User psw: $(git config user.password)"
                   git push origin manifests
 
                 
