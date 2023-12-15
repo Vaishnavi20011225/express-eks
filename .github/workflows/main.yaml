@@ -81,7 +81,7 @@ jobs:
                   # #cd sample-gitops
 
                   
-                  git clone https://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@github.com/Vaishnavi20011225/awseks-gitops.git
+                  git clone https://swarajwohlig2107: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@github.com/Vaishnavi20011225/awseks-gitops.git
                   cd awseks-gitops
                   # git checkout manifests
                   # git config user.name "Vaishnavi20011225"
