@@ -51,30 +51,42 @@ jobs:
     
       - name: update image
         run: |
-                 git clone https://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@github.com/Vaishnavi20011225/awseks-gitops.git
+                 # git clone https://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@github.com/Vaishnavi20011225/awseks-gitops.git
                  
-                 cd awseks-gitops
-                 git checkout manifests
+                 # cd awseks-gitops
+                 # git checkout manifests
                 
-                 git status
-                 git config user.email "vaishnavi.korgaonkar@wohlig.com"
-                 git config user.name "Vaishnavi20011225"
+                 # git status
+                 # git config user.email "vaishnavi.korgaonkar@wohlig.com"
+                 # git config user.name "Vaishnavi20011225"
 
-                 yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}"' manifests/deployment.yaml -i
+                 # yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}"' manifests/deployment.yaml -i
                 
-                 git add .
-                 git commit -m "update new image" --allow-empty
+                 # git add .
+                 # git commit -m "update new image" --allow-empty
                 
-                 git status
+                 # git status
                 
                 
-                 git remote set-url origin https://Vaishnavi20011225:${{ secrets.GH_TOKEN }}@github.com/Vaishnavi20011225/awseks-gitops.git
+                 # git remote set-url origin https://Vaishnavi20011225:${{ secrets.GH_TOKEN }}@github.com/Vaishnavi20011225/awseks-gitops.git
                  
-                 git remote get-url origin
-                 git branch --show-current
+                 # git remote get-url origin
+                 # git branch --show-current
                  
-                 git push -u origin manifests
+                 # git push -u origin manifests
                 
-                 git status
+                 # git status
+
+                  git clone https://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@github.com/Vaishnavi20011225/awseks-gitops.git
+                  #cd sample-gitops
+                  cd awseks-gitops
+                  git checkout manifests
+                  git config user.name "Vaishnavi20011225"
+                  git config user.email "vaishnavi.korgaonkar@wohlig.com"
+                  yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}"' manifests/deployment.yaml -i
+                
+                  git add .
+                  git commit -m "updating newer image" --allow-empty
+                  git push origin manifests
 
                 
