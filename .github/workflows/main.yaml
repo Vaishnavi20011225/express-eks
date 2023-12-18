@@ -34,8 +34,6 @@ jobs:
       - name: print
         run: |
                 echo "ECR Registry URL: ${{ steps.login-ecr.outputs.registry }}"
-
-
       - name: Build and push
         env: 
           registry: ${{ steps.login-ecr.outputs.registry }}
@@ -43,56 +41,33 @@ jobs:
           image_tag: 1.1
         run: | 
           docker build -t 187386332334.dkr.ecr.ap-south-1.amazonaws.com/new:${{ github.sha }} .
-          echo $registry
-          echo $repository
           docker push 187386332334.dkr.ecr.ap-south-1.amazonaws.com/new:${{ github.sha }}
-
      
     
       - name: update image
         run: |
-                 # git clone https://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@github.com/Vaishnavi20011225/awseks-gitops.git
+                 git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
+                 git config --global user.name "Vaishnavi20011225"
+                 git clone https://github.com/Vaishnavi20011225/awseks-gitops.git
                  
-                 # cd awseks-gitops
-                 # git checkout manifests
+                 cd awseks-gitops
+                 git checkout manifests
                 
-                 # git status
-                 # git config user.email "vaishnavi.korgaonkar@wohlig.com"
-                 # git config user.name "Vaishnavi20011225"
-
-                 # yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}"' manifests/deployment.yaml -i
+                 git status
                 
-                 # git add .
-                 # git commit -m "update new image" --allow-empty
+                 yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/new:${{ github.sha }}"' manifests/deployment.yaml -i
                 
-                 # git status
+                 git add .
+                 git commit -m "update new image"
+                
+                 git status
                 
                 
-                 # git remote set-url origin https://Vaishnavi20011225:${{ secrets.GH_TOKEN }}@github.com/Vaishnavi20011225/awseks-gitops.git
+                 git remote set-url origin https://Vaishnavi20011225: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@github.com/Vaishnavi20011225/awseks-gitops.git
                  
-                 # git remote get-url origin
-                 # git branch --show-current
+                 git remote get-url origin
+                 git branch --show-current
                  
-                 # git push -u origin manifests
+                 git push -u origin manifests
                 
-                 # git status
-
-                  # git clone https://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@github.com/Vaishnavi20011225/awseks-gitops.git
-                  # #cd sample-gitops
-
-                  
-                  #git clone https://swarajwohlig2107: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@github.com/Vaishnavi20011225/awseks-gitops.git
-                  git clone https://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@github.com/Vaishnavi20011225/awseks-gitops.git
-                  cd awseks-gitops
-                  git checkout manifests
-                  git config user.name "Vaishnavi20011225"
-                  git config user.email "vaishnavi.korgaonkar@wohlig.com"
-                  
-                  yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/new:${{ github.sha }}"' manifests/deployment.yaml -i
-
-                  git config user.email RZrYPhl4KdVlbrVzP4q74xWMBP7vd8Ps05V2hjamQ7M@bots.github.org
-                  git add .
-                  git commit -m "updating newer image" --allow-empty
-                  git push origin manifests
-
-                
+                 git status
