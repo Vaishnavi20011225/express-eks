@@ -5,6 +5,9 @@ on:
     branches:
       - 'main'
 
+env: 
+  GITHUB_TOKEN: ${{ secrets.TOKEN100 }}
+
 jobs:
   push_and_deploy:
     name: push to aws-eks
@@ -49,6 +52,8 @@ jobs:
                  git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
                  git config --global user.name "Vaishnavi20011225"
                  git clone https://github.com/Vaishnavi20011225/awseks-gitops.git
+
+                 
                  
                  cd awseks-gitops
                  git checkout manifests
