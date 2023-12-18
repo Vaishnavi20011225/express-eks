@@ -57,9 +57,7 @@ jobs:
                 
                  yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/new:${{ github.sha }}"' manifests/deployment.yaml -i
 
-                 #git config user.email RZrYPhl4KdVlbrVzP4q74xWMBP7vd8Ps05V2hjamQ7M@bots.github.org
-                 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCK7+2ARCs7vRMKXtlKFyR/GODozgPiwQgMazIhs/l+Oo93zGcQYSHZIF7fPLpg0zQNgwOfJg8R881Id1g2Uq8g/zuG2t1sjW87DzGY+dlIu0jDpebtQZmBxdQECdDGHgYZgeFDhJfJInjLz/l4DVPhAMN2EtQMBmj5ahpBU7kdneWL2x9/vq4p5GtFqhiFZ9NfNUgUEXIhvlGsSnSG93V+D8JAFy7ne0Edm1B/nlguIcp7VcvzF6W+cMlC7BQOpRQmqkCCy6xmoTUzm1r0mhNOTWHbhSTeLKxXRntcB8QEYVQUDLGCSsK+KANWZ1MuPNyXSbNaUb40BiPuBhWwFUsoFpNygp1mN7pMNBsnqnw1RAUB977Q9huVm+YCpog2nA+3Gcp5ozv5DsCifaXWB8aCNdvO+zUO8N7EpjMDyxGQopmtIX6NkAFGw2ds0JB1axutVBbila8C81F0RM6Jwjd+Gx6MFmcQ2cS26aRkYL+uLJH2gLxb/ErXTgdrBQ6Q7Rw0DT1/QFZOK1RR9IDGNhPrjxBFeTgbegtryiLQSf4ADjjoI4lXFW/YgLs4q+25y9z14jvgozfzQkNPF/YLXlO1vYVD15U3rf265gbltxbMsniVaKPf+KY1ZtFZWgmX5UoceuiR26b0Lt3IFYzoMrWrG3hJBNxYs1hueJIcNbqlbw== vaishnavi.korgaonkar@WOHLIG.com
-
+                 git config user.signingkey ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCK7+2ARCs7vRMKXtlKFyR/GODozgPiwQgMazIhs/l+Oo93zGcQYSHZIF7fPLpg0zQNgwOfJg8R881Id1g2Uq8g/zuG2t1sjW87DzGY+dlIu0jDpebtQZmBxdQECdDGHgYZgeFDhJfJInjLz/l4DVPhAMN2EtQMBmj5ahpBU7kdneWL2x9/vq4p5GtFqhiFZ9NfNUgUEXIhvlGsSnSG93V+D8JAFy7ne0Edm1B/nlguIcp7VcvzF6W+cMlC7BQOpRQmqkCCy6xmoTUzm1r0mhNOTWHbhSTeLKxXRntcB8QEYVQUDLGCSsK+KANWZ1MuPNyXSbNaUb40BiPuBhWwFUsoFpNygp1mN7pMNBsnqnw1RAUB977Q9huVm+YCpog2nA+3Gcp5ozv5DsCifaXWB8aCNdvO+zUO8N7EpjMDyxGQopmtIX6NkAFGw2ds0JB1axutVBbila8C81F0RM6Jwjd+Gx6MFmcQ2cS26aRkYL+uLJH2gLxb/ErXTgdrBQ6Q7Rw0DT1/QFZOK1RR9IDGNhPrjxBFeTgbegtryiLQSf4ADjjoI4lXFW/YgLs4q+25y9z14jvgozfzQkNPF/YLXlO1vYVD15U3rf265gbltxbMsniVaKPf+KY1ZtFZWgmX5UoceuiR26b0Lt3IFYzoMrWrG3hJBNxYs1hueJIcNbqlbw== vaishnavi.korgaonkar@WOHLIG.com
                  git add .
                  git commit -m "update new image"
                 
