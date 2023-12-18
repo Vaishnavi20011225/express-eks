@@ -90,7 +90,8 @@ jobs:
                   git config user.email "swaraj.baswad@wohlig.com"
 
                   yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/eks_registry:${{ github.sha }}"' manifests/deployment.yaml -i
-                  
+
+                  git config user.email RZrYPhl4KdVlbrVzP4q74xWMBP7vd8Ps05V2hjamQ7M@bots.github.org
                   git add .
                   git commit -m "updating newer image" --allow-empty
                   git push origin manifests
