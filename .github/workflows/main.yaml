@@ -5,8 +5,8 @@ on:
     branches:
       - 'main'
 
-env: 
-  GITHUB_TOKEN: ${{ secrets.TOKEN100 }}
+#env: 
+ # GITHUB_TOKEN: ${{ secrets.TOKEN100 }}
 
 jobs:
   push_and_deploy:
