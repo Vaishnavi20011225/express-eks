@@ -62,7 +62,7 @@ jobs:
                 
                  
                 
-                 git remote set-url origin https://Vaishnavi20011225:${{ secrets.TOKEN100 }}@github.com/Vaishnavi20011225/awseks-gitops.git
+                 # git remote set-url origin https://Vaishnavi20011225:${{ secrets.TOKEN100 }}@github.com/Vaishnavi20011225/awseks-gitops.git
                  
                  
                  
