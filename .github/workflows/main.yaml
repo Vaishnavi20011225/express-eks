@@ -35,10 +35,6 @@ jobs:
         run: |
                 echo "ECR Registry URL: ${{ steps.login-ecr.outputs.registry }}"
       - name: Build and push
-        env: 
-          registry: ${{ steps.login-ecr.outputs.registry }}
-          repository: new
-          image_tag: 1.1
         run: | 
           docker build -t 187386332334.dkr.ecr.ap-south-1.amazonaws.com/new:${{ github.sha }} .
           docker push 187386332334.dkr.ecr.ap-south-1.amazonaws.com/new:${{ github.sha }}
@@ -50,12 +46,12 @@ jobs:
                  git config --global user.name "Vaishnavi20011225"
                  git clone https://github.com/Vaishnavi20011225/awseks-gitops.git
 
-                 
+
                  
                  cd awseks-gitops
                  git checkout manifests
                 
-                 git status
+                 
                 
                  yq e '.spec.template.spec.containers[0].image = "187386332334.dkr.ecr.ap-south-1.amazonaws.com/new:${{ github.sha }}"' manifests/deployment.yaml -i
 
@@ -64,14 +60,12 @@ jobs:
                  git add .
                  git commit -m "update new image"
                 
-                 git status
                  
                 
                  git remote set-url origin https://Vaishnavi20011225:${{ secrets.TOKEN100 }}@github.com/Vaishnavi20011225/awseks-gitops.git
                  
-                 git remote get-url origin
-                 git branch --show-current
+                 
                  
                  git push -u origin manifests
                 
-                 git status
+                
